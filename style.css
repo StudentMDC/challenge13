@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+.intro {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--Very-Dark-Blue);
+  width: 550px;
+}
+.intro h1 {
+  margin: 0;
+}
+.intro span {
+  font-weight: 200;
+}
+.intro p {
+  color: var(--Grayish-Blue);
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--Very-Light-Gray);
+}
+.flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 30px;
+  align-items: center;
+}
+.box {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 3px 0px var(--Very-Dark-Blue);
+  color: var(--Grayish-Blue);
+}
+.box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  width: 100%;
+}
+.box h3 {
+  color: var(--Very-Dark-Blue);
+}
+.box p {
+  font-size: 12px;
+}
+.flex .box:nth-of-type(1) .box::before {
+  background-color: var(--Cyan);
+}
+.flex-col .box:nth-of-type(1) .box::before {
+  background-color: var(--Red);
+}
+.flex .box:last-of-type .box::before {
+  background-color: var(--Blue);
+}
+.flex-col .box:nth-of-type(2) .box::before {
+  background-color: var(--Orange);
+}
+.image {
+  text-align: right;
+}
