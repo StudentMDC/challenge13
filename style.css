@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+body {
+  height: 100vh;
+}
 :root {
   --Red: hsl(0, 78%, 62%);
   --Cyan: hsl(180, 62%, 55%);
@@ -11,14 +14,25 @@
   --Very-Light-Gray: hsl(0, 0%, 98%);
 }
 .intro {
+  margin-top: 80px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   color: var(--Very-Dark-Blue);
-  width: 550px;
+  width: 90%;
+}
+@media (min-width:600px) {
+  .intro {
+    width: 550px;
+  }
 }
 .intro h1 {
   margin: 0;
+}
+@media (max-width:600px) {
+  .intro h1 {
+    font-size: 25px;
+  }
 }
 .intro span {
   font-weight: 200;
@@ -31,9 +45,19 @@ body {
   background-color: var(--Very-Light-Gray);
 }
 .flex {
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: 30px;
+}
+@media (min-width:1000px) {
+  .flex {
+    flex-direction: row;
+  }
 }
 .flex-col {
   display: flex;
@@ -42,14 +66,18 @@ body {
   gap: 30px;
   align-items: center;
 }
+.flex-col .box {
+  max-width: 350px;
+}
 .box {
   position: relative;
-  width: 300px;
+  max-width: 350px;
   height: 250px;
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 30px;
   box-shadow: 0 2px 3px 0px var(--Very-Dark-Blue);
   color: var(--Grayish-Blue);
+  overflow: hidden;
 }
 .box::before {
   content: "";
@@ -57,7 +85,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 8px;
+  height: 5px;
   width: 100%;
 }
 .box h3 {
@@ -66,16 +94,16 @@ body {
 .box p {
   font-size: 12px;
 }
-.flex .box:nth-of-type(1) .box::before {
+.flex .box:nth-of-type(1)::before {
   background-color: var(--Cyan);
 }
-.flex-col .box:nth-of-type(1) .box::before {
+.flex-col .box:nth-of-type(1)::before {
   background-color: var(--Red);
 }
-.flex .box:last-of-type .box::before {
+.flex .box:last-of-type::before {
   background-color: var(--Blue);
 }
-.flex-col .box:nth-of-type(2) .box::before {
+.flex-col .box:nth-of-type(2)::before {
   background-color: var(--Orange);
 }
 .image {
